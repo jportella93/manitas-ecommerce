@@ -1,6 +1,6 @@
 yarn.lock
 localStorage/
- 
+
 # Logs
 logs
 *.log
@@ -36,4 +36,4 @@ public
 
 cypress/videos
 cypress/screenshots
-.env
+.env*
