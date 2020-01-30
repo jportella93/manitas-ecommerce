@@ -21,13 +21,13 @@ exports[`renders 1`] = `
               class="header item"
               href="/"
             >
-              <img
-                alt="I love Lamp"
-                class="ui mini image"
-                src="test-file-stub"
-                style="margin-right: 1.5em;"
-              />
-              Starter Store
+              <span
+                aria-label="Manita"
+                role="img"
+              >
+                🖕
+              </span>
+              1312.cat
             </a>
             <div
               class="right menu"
