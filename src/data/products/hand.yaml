@@ -1,0 +1,9 @@
+name: maneta
+description: Per aquelles vegades que només necessites fer-li 🖕 al món.
+mainImageHref: https://picsum.photos/200
+meta:
+  - display_price:
+      - with_tax:
+          - amount: 399
+            currency: EUR
+            formatted: 3,99€

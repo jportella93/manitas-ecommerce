@@ -19,6 +19,13 @@ module.exports = {
           'EdP3Gi1agyUF3yFS7Ngm8iyodLgbSR3wY4ceoJl0d2',
       },
     },
+    `gatsby-transformer-yaml`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data/products`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

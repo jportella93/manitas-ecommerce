@@ -1,0 +1,9 @@
+name: rosa
+description: El regal mes original per Sant Jordi.
+mainImageHref: https://picsum.photos/200
+meta:
+  - display_price:
+      - with_tax:
+          - amount: 499
+            currency: EUR
+            formatted: 4,99€
