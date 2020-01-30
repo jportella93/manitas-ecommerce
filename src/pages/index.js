@@ -15,13 +15,13 @@ const StoreIndex = ({location}) => {
           title
         }
       }
-      allMoltinProduct {
+      allProductsYaml {
         edges {
           node {
             id
             name
-            description
             mainImageHref
+            description
             meta {
               display_price {
                 with_tax {
@@ -31,21 +31,50 @@ const StoreIndex = ({location}) => {
                 }
               }
             }
-            mainImage {
-              childImageSharp {
-                sizes(maxWidth: 600) {
-                  ...GatsbyImageSharpSizes
-                }
-              }
-            }
           }
         }
       }
     }
   `)
 
+  // const data = useStaticQuery(graphql`
+  //   query IndexQuery {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //       }
+  //     }
+  //     allMoltinProduct {
+  //       edges {
+  //         node {
+  //           id
+  //           name
+  //           description
+  //           mainImageHref
+  //           meta {
+  //             display_price {
+  //               with_tax {
+  //                 amount
+  //                 currency
+  //                 formatted
+  //               }
+  //             }
+  //           }
+  //           mainImage {
+  //             childImageSharp {
+  //               sizes(maxWidth: 600) {
+  //                 ...GatsbyImageSharpSizes
+  //               }
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
+
   const siteTitle = get(data, 'site.siteMetadata.title')
-  const products = get(data, 'allMoltinProduct.edges')
+  const products = get(data, 'allProductsYaml.edges')
   const filterProductsWithoutImages = products.filter(v => v.node.mainImageHref)
   return (
     <Layout location={location}>

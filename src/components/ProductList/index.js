@@ -1,11 +1,12 @@
 /* eslint-disable camelcase */
 import React from 'react'
 import {Card, Image} from 'semantic-ui-react'
-import Img from 'gatsby-image'
+// import Img from 'gatsby-image'
 import {Link} from 'gatsby'
 
 const mapProductsToItems = products =>
-  products.map(({node: {name, id, meta, mainImage}}) => {
+  products.map(({node: {name, id, meta, mainImageHref}}) => {
+    console.log('---->: meta', meta)
     const price = meta.display_price.with_tax.formatted || null
     return {
       as: Link,
@@ -13,7 +14,8 @@ const mapProductsToItems = products =>
       childKey: id,
       image: (
         <Image>
-          <Img sizes={mainImage.childImageSharp.sizes} alt={name} />
+          <img src={mainImageHref} alt={name} />
+          {/* <Img sizes={mainImage.childImageSharp.sizes} alt={name} /> */}
         </Image>
       ),
       header: name,

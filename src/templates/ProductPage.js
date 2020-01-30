@@ -9,7 +9,7 @@ import Layout from '../components/Layout'
 
 class ProductPageTemplate extends React.PureComponent {
   render() {
-    const productInfo = get(this, 'props.data.allMoltinProduct')
+    const productInfo = get(this, 'props.data.allProductsYaml')
     const data = productInfo.edges[0].node
     const slug = data.slug
     const image = get(data, 'mainImageHref')
@@ -40,7 +40,7 @@ export default ProductPageTemplate
 
 export const pageQuery = graphql`
   query ProductsQuery($id: String!) {
-    allMoltinProduct(filter: {id: {eq: $id}}) {
+    allProductsYaml(filter: {id: {eq: $id}}) {
       edges {
         node {
           id
@@ -56,20 +56,20 @@ export const pageQuery = graphql`
             }
           }
           mainImageHref
-          mainImage {
-            childImageSharp {
-              sizes(maxWidth: 400) {
-                ...GatsbyImageSharpSizes
-              }
-            }
-          }
-          slug
-          material
-          max_watt
-          bulb_qty
-          bulb
-          sku
-          finish
+          # mainImage {
+          #   childImageSharp {
+          #     sizes(maxWidth: 400) {
+          #       ...GatsbyImageSharpSizes
+          #     }
+          #   }
+          # }
+          # slug
+          # material
+          # max_watt
+          # bulb_qty
+          # bulb
+          # sku
+          # finish
         }
       }
     }
